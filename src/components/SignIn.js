@@ -26,24 +26,6 @@ const SignInPage = () => {
       username: userName,
       password: password,
     };
-    console.log(data,'data')
-    const res = await fetch(`${BASE_URL}/signin`, {
-      method: 'POST',
-      body: JSON.stringify(data),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
-    if (res.ok) {
-      const { accessToken } = await res.json();
-       console.log(accessToken,'token')
-      // Set the access token as an HTTP-only cookie
-      // cookies.set('access_token', accessToken, {
-      //   path: '/',
-      //   httpOnly: true,
-      //   secure: true // Set to true if using HTTPS
-      // });
-    }
     const response = await axios.post(`${BASE_URL}/signin`, data,{
       withCredentials: true,
     });
