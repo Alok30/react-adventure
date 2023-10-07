@@ -34,6 +34,18 @@ const SignInPage = () => {
         colorPreference: response?.data?.user?.colorPreference,
         isUserLogined: true,
       });
+      
+        // Usage:
+        // const jwtToken = extractJwtToken();
+        // console.log(jwtToken);
+          const res = await axios.put(`${BASE_URL}/preferences/testuser1`, {
+            // Your POST data goes here
+            colorPreference: 'blue',
+          },
+          {
+            withCredentials: true, // Send cookies with the request
+          });
+          console.log(res, "response");
       navigate("/");
     } else {
       return (

@@ -7,7 +7,24 @@ const ColorPicker = () => {
   const [selectedColor, setSelectedColor] = useState("");
   const { colorPreference } = userAppStore();
   console.log(colorPreference, "colorPreference");
+  function extractJwtToken() {
+    console.log( document.cookie)
+    const cookies = document.cookie.split('; ');
+    const jwtCookie = cookies.find((cookie) => cookie.startsWith('jwt='));
+  
+    if (jwtCookie) {
+      const jwtToken = jwtCookie.split('=')[1];
+      return jwtToken;
+    }
+  
+    return null; // Return null if the JWT token is not found
+  }
+
   const updateColorPreference = async (newColor) => {
+      
+  // Usage:
+  const jwtToken = extractJwtToken();
+  console.log(jwtToken);
     const response = await axios.put(`${BASE_URL}/preferences/testuser1`, {
       // Your POST data goes here
       colorPreference: newColor,
