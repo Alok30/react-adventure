@@ -27,28 +27,32 @@ const SignInPage = () => {
       password: password,
     };
     console.log(data,'data')
+    const res = await fetch(`${BASE_URL}/signin`, {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    if (res.ok) {
+      const { accessToken } = await res.json();
+       console.log(accessToken,'token')
+      // Set the access token as an HTTP-only cookie
+      // cookies.set('access_token', accessToken, {
+      //   path: '/',
+      //   httpOnly: true,
+      //   secure: true // Set to true if using HTTPS
+      // });
+    }
     const response = await axios.post(`${BASE_URL}/signin`, data,{
       withCredentials: true,
     });
-    console.log(response, "res");
     if (response.status === 200 && response.statusText === "OK") {
       userAppStore.setState({
         colorPreference: response?.data?.user?.colorPreference,
         isUserLogined: true,
       });
-      
-        // Usage:
-        // const jwtToken = extractJwtToken();
-        // console.log(jwtToken);
-          const res = await axios.put(`${BASE_URL}/preferences/testuser1`, {
-            // Your POST data goes here
-            colorPreference: 'blue',
-          },
-          {
-            withCredentials: true, // Send cookies with the request
-          });
-          console.log(res, "response");
-      navigate("/");
+    navigate("/");
     } else {
       return (
         <Alert severity="error">This is an error alert — check it out!</Alert>
