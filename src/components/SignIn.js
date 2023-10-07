@@ -27,7 +27,9 @@ const SignInPage = () => {
       password: password,
     };
     console.log(data,'data')
-    const response = await axios.post(`${BASE_URL}/signin`, data);
+    const response = await axios.post(`${BASE_URL}/signin`, data,{
+      withCredentials: true,
+    });
     console.log(response, "res");
     if (response.status === 200 && response.statusText === "OK") {
       userAppStore.setState({
