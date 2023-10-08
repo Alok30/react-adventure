@@ -1,76 +1,89 @@
 import React, { useEffect, useState } from "react";
-import { FormControl, Select, MenuItem } from "@mui/material";
-import { userAppStore } from "../store";
 import axios from "axios";
+import { Menu, IconButton, Alert, MenuItem } from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import { userAppStore } from "../store";
 import { BASE_URL } from "../constant";
+
 const ColorPicker = () => {
-  const [selectedColor, setSelectedColor] = useState("");
-  const { colorPreference } = userAppStore();
-  console.log(colorPreference, "colorPreference");
-  function extractJwtToken() {
-    console.log(document.cookie);
-    const cookies = document.cookie.split("; ");
-    const jwtCookie = cookies.find((cookie) => cookie.startsWith("jwt="));
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [showAlert, setShowAlert] = useState(false);
+  const [error, setError] = useState(null);
+  const { colorPreference, userName } = userAppStore();
 
-    if (jwtCookie) {
-      const jwtToken = jwtCookie.split("=")[1];
-      return jwtToken;
-    }
+  const handleOpenMenu = (event) => {
+    setAnchorEl(event.currentTarget);
+    setError("");
+  };
 
-    return null; // Return null if the JWT token is not found
-  }
+  const handleCloseMenu = () => {
+    setAnchorEl(null);
+  };
 
   const updateColorPreference = async (newColor) => {
-    // Usage:
-    const jwtToken = extractJwtToken();
-    console.log(jwtToken,'jwtToken');
-    const response = await axios.put(
-      `${BASE_URL}/preferences/testuser1`,
-      {
-        // Your POST data goes here
-        colorPreference: newColor,
-      },
-      {
-        withCredentials: true,
+    try {
+      const response = await axios.put(
+        `${BASE_URL}/preferences/${userName}`,
+        {
+          colorPreference: newColor,
+        },
+        {
+          withCredentials: true,
+        }
+      );
+      if (response.status === 200) {
+        setShowAlert(true);
       }
-    );
-    console.log(response, "response");
-  };
-  const handleColorChange = (event) => {
-    const newColor = event.target.value;
-    console.log(newColor, "newColor");
-    document.documentElement.style.setProperty("--primary-color", newColor);
-    setSelectedColor(newColor);
-    updateColorPreference(newColor);
+    } catch (error) {
+      setError("Failed to update color preference.");
+    }
   };
 
-  const colorOptions = [
-    { value: "", label: "Select a color" },
-    { value: "#ff0000", label: "red" },
-    { value: "#00ff00", label: "green" },
-    { value: "#0000ff", label: "blue" },
-  ];
+  const handleThemeChange = (themeColor) => {
+    setShowAlert(false);
+    document.documentElement.style.setProperty("--primary-color", themeColor);
+    if (userName) {
+      updateColorPreference(themeColor);
+    }
+    handleCloseMenu();
+  };
 
   useEffect(() => {
-    setSelectedColor(colorPreference);
+    document.documentElement.style.setProperty(
+      "--primary-color",
+      colorPreference
+    );
   }, [colorPreference]);
+
   return (
-    <div>
-      <FormControl>
-        <Select
-          value={selectedColor}
-          onChange={handleColorChange}
-          displayEmpty
-          inputProps={{ "aria-label": "Select a color" }}
-        >
-          {colorOptions.map((option) => (
-            <MenuItem key={option.value} value={option.value}>
-              {option.label}
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-    </div>
+    <React.Fragment>
+      <IconButton
+        size="large"
+        edge="start"
+        color="inherit"
+        aria-label="menu"
+        sx={{ mr: 2 }}
+        onClick={handleOpenMenu}
+      >
+        <MenuIcon />
+      </IconButton>
+      <Menu
+        anchorEl={anchorEl}
+        open={Boolean(anchorEl)}
+        onClose={handleCloseMenu}
+      >
+        <MenuItem onClick={() => handleThemeChange("blue")}>
+          Blue Theme
+        </MenuItem>
+        <MenuItem onClick={() => handleThemeChange("green")}>
+          Green Theme
+        </MenuItem>
+        <MenuItem onClick={() => handleThemeChange("red")}>Red Theme</MenuItem>
+      </Menu>
+      {showAlert && <Alert severity="info">Color updated successfully!</Alert>}
+      {/* Display error message */}
+      {error && <Alert severity="error">{error}</Alert>}{" "}
+    </React.Fragment>
   );
 };
 

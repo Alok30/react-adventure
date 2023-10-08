@@ -1,44 +1,63 @@
 import React, { useState } from "react";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import CssBaseline from "@mui/material/CssBaseline";
-import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
-import Link from "@mui/material/Link";
-import Paper from "@mui/material/Paper";
-import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import {
+  Avatar,
+  Button,
+  CssBaseline,
+  TextField,
+  FormControlLabel,
+  Checkbox,
+  Paper,
+  Box,
+  Grid,
+  Typography,
+  Alert,
+} from "@mui/material";
+import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import { userAppStore } from "../store";
-import { Alert } from "@mui/material";
 import { BASE_URL } from "../constant";
+
 const SignInPage = () => {
-  const [userName, setUserName] = useState("");
-  const [password, setPassword] = useState("");
+  const [formData, setFormData] = useState({
+    username: "",
+    password: "",
+  });
+
+  const [showAlert, setShowAlert] = useState(false);
   const navigate = useNavigate();
+
+  const handleInputChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+    setShowAlert(false);
+  };
+
   const loginFunc = async (event) => {
     event.preventDefault();
-    const data = {
-      username: userName,
-      password: password,
-    };
-    const response = await axios.post(`${BASE_URL}/signin`, data,{
-      withCredentials: true,
-    });
-    if (response.status === 200 && response.statusText === "OK") {
-      userAppStore.setState({
-        colorPreference: response?.data?.user?.colorPreference,
-        isUserLogined: true,
+
+    try {
+      const response = await axios.post(`${BASE_URL}/signin`, formData, {
+        withCredentials: true,
       });
-    navigate("/");
-    } else {
-      return (
-        <Alert severity="error">This is an error alert — check it out!</Alert>
-      );
+
+      if (response.status === 200 && response.statusText === "OK") {
+        const { username } = formData;
+        userAppStore.setState({
+          colorPreference: response?.data?.user?.colorPreference,
+          isUserLogined: true,
+          userName: username,
+        });
+        navigate("/");
+      }
+    } catch (error) {
+      setFormData({
+        username: "",
+        password: "",
+      });
+      setShowAlert(true);
     }
   };
 
@@ -67,26 +86,21 @@ const SignInPage = () => {
               required
               fullWidth
               id="username"
-              label="UserName"
+              label="Username"
               name="username"
-              // autoComplete="username"
+              value={formData.username}
               autoFocus
-              onChange={(e) => {
-                setUserName(e.target.value);
-              }}
+              onChange={handleInputChange}
             />
             <TextField
               margin="normal"
               required
               fullWidth
               name="password"
+              value={formData.password}
               label="Password"
               type="password"
-              id="password"
-              // autoComplete="current-password"
-              onChange={(e) => {
-                setPassword(e.target.value);
-              }}
+              onChange={handleInputChange}
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
@@ -97,18 +111,27 @@ const SignInPage = () => {
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
-              onClick={(e) => loginFunc(e)}
+              onClick={loginFunc}
             >
               Sign In
             </Button>
             <Grid container>
               <Grid item>
-                <Link href="#" variant="body2">
-                  {"Register the new user? Sign Up"}
-                </Link>
+                <Button
+                  type="text"
+                  fullWidth
+                  variant="text"
+                  sx={{ mt: 3, mb: 2 }}
+                  onClick={() => navigate("/signup")}
+                >
+                  Register a new user? Sign Up
+                </Button>
               </Grid>
             </Grid>
           </Box>
+          {showAlert && (
+            <Alert severity="error">Failed to login. Please try again!</Alert>
+          )}
         </Box>
       </Grid>
       <Grid
@@ -130,4 +153,5 @@ const SignInPage = () => {
     </Grid>
   );
 };
+
 export default SignInPage;
