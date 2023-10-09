@@ -8,16 +8,6 @@ const Home = () => {
       <Header />
       <div>
         <p>
-          SAPient Technologies and Consulting is a UAE based company, which
-          employs more than 70 consultants specialized in SAP technology and
-          products. Best known for SAP solutions implementation. Specialized
-          Consulting Organization with designing, building and implementing
-          Cloud-based, hybrid and on-premises SAP systems for complex
-          multinational corporations. SAPient has recently emerged as a Solution
-          leader in deploying SAP Solutions at Public Sector with the use of the
-          best practice accelerator.
-        </p>
-        <p>
           What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing
           and typesetting industry. Lorem Ipsum has been the industry's standard
           dummy text ever since the 1500s, when an unknown printer took a galley

@@ -32,7 +32,7 @@ const Header = () => {
       <Toolbar>
         <ColorPicker />
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          Sapient
+          Sapiens
         </Typography>
         {!isUserLogined ? (
           <Button color="inherit" onClick={goToLoginPage}>
