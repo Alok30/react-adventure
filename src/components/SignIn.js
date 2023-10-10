@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import axiosWrapper from "../util/axiosWrapper";
 import {
   Avatar,
   Button,
@@ -16,14 +16,12 @@ import {
 } from "@mui/material";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import { userAppStore } from "../store";
-import { BASE_URL } from "../constant";
 
 const SignInPage = () => {
   const [formData, setFormData] = useState({
     username: "",
     password: "",
   });
-
   const [showAlert, setShowAlert] = useState(false);
   const navigate = useNavigate();
 
@@ -34,22 +32,18 @@ const SignInPage = () => {
     });
     setShowAlert(false);
   };
-
   const loginFunc = async (event) => {
     event.preventDefault();
-
     try {
-      const response = await axios.post(`${BASE_URL}/signin`, formData, {
-        withCredentials: true,
-      });
-
+      const response = await axiosWrapper.post("/signin", formData);
       if (response.status === 200 && response.statusText === "OK") {
         const { username } = formData;
         userAppStore.setState({
           colorPreference: response?.data?.user?.colorPreference,
-          isUserLogined: true,
-          userName: username,
+          username: username,
         });
+        localStorage.setItem('userSession',response?.data?.user);
+        localStorage.setItem('colorPreference', response?.data?.user?.colorPreference);
         navigate("/");
       }
     } catch (error) {

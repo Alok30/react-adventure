@@ -1,8 +1,35 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "./Header";
 import "./Home.css";
-
+import { userAppStore } from "../store";
+import axiosWrapper from "../util/axiosWrapper";
+import { useNavigate } from "react-router-dom";
 const Home = () => {
+  const navigate=useNavigate();
+
+  useEffect(() => {
+    axiosWrapper
+      .get('/check-auth')
+      .then((response) => {
+        const result=response.data;
+        if (response.status === 200) {
+          userAppStore.setState({
+            username:response.data.username,
+          });
+          localStorage.setItem('userSession',result.username);
+          localStorage.setItem('colorPreference', result.colorPreference);
+        } else {
+          window.location.href = '/';
+          localStorage.removeItem('userSession');
+          localStorage.removeItem('colorPreference');
+        }
+      })
+      .catch((error) => {
+        navigate('/')
+        localStorage.removeItem('userSession');
+        localStorage.removeItem('colorPreference');
+      });
+  }, []);
   return (
     <div className="App-header">
       <Header />

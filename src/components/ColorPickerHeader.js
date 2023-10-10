@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import axiosWrapper from "../util/axiosWrapper";
 import { Menu, IconButton, Alert, MenuItem } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { userAppStore } from "../store";
-import { BASE_URL } from "../constant";
 
 const ColorPicker = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [showAlert, setShowAlert] = useState(false);
   const [error, setError] = useState(null);
-  const { colorPreference, userName } = userAppStore();
 
+  const userColorPreference=localStorage.getItem('colorPreference');
+  const userName=localStorage.getItem('userSession');
   const handleOpenMenu = (event) => {
     setAnchorEl(event.currentTarget);
     setError("");
@@ -22,17 +21,15 @@ const ColorPicker = () => {
 
   const updateColorPreference = async (newColor) => {
     try {
-      const response = await axios.put(
-        `${BASE_URL}/preferences/${userName}`,
+      const response = await axiosWrapper.put(
+        `/preferences/${userName}`,
         {
           colorPreference: newColor,
         },
-        {
-          withCredentials: true,
-        }
       );
       if (response.status === 200) {
         setShowAlert(true);
+        localStorage.setItem('colorPreference', response.data.user.colorPreference);
       }
     } catch (error) {
       setError("Failed to update color preference.");
@@ -51,9 +48,9 @@ const ColorPicker = () => {
   useEffect(() => {
     document.documentElement.style.setProperty(
       "--primary-color",
-      colorPreference
+      userColorPreference
     );
-  }, [colorPreference]);
+  }, [userColorPreference]);
 
   return (
     <React.Fragment>
@@ -81,7 +78,6 @@ const ColorPicker = () => {
         <MenuItem onClick={() => handleThemeChange("red")}>Red Theme</MenuItem>
       </Menu>
       {showAlert && <Alert severity="info">Color updated successfully!</Alert>}
-      {/* Display error message */}
       {error && <Alert severity="error">{error}</Alert>}{" "}
     </React.Fragment>
   );

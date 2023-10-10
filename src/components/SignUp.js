@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
 import {
   Avatar,
   Button,
@@ -18,41 +17,34 @@ import {
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import { BASE_URL } from "../constant";
 import { useNavigate } from "react-router-dom";
+import axiosWrapper from "../util/axiosWrapper";
 
 const SignUp = () => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [colorPreference, setColorPreference] = useState("");
   const [error, setError] = useState("");
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
   const handleColorChange = (e) => {
     setColorPreference(e.target.value);
   };
-
   const registerNewUser = async (e) => {
     e.preventDefault();
-
     if (!userName || !password || !colorPreference) {
       setError("All fields are required.");
       return;
     }
-
     try {
       const data = {
         username: userName,
         password: password,
         colorPreference: colorPreference,
       };
-
-      const response = await axios.post(`${BASE_URL}/signup`, data, {
-        withCredentials: true,
-      });
-
+      const response = await axiosWrapper.post(`${BASE_URL}/signup`, data);
       if (response.status === 201) {
-        // Registration successful, you can redirect or show a success message.
         console.log("Registration successful!");
-        navigate('/login');
+        navigate("/login");
       } else {
         setError("Registration failed. Please try again.");
       }
