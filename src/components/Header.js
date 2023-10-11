@@ -7,15 +7,18 @@ import { userAppStore } from "../store";
 
 const Header = () => {
   const navigate = useNavigate();
-
+  const {username} =userAppStore();
   const goToLoginPage = () => {
-    navigate("login");
+    navigate("/login");
   };
 
   const logoutCurrentUser = async () => {
     try {
       const resp = await axiosWrapper.get(`/logout`);
       if (resp?.data?.message) {
+        userAppStore.setState({
+          username:''
+        })
         localStorage.removeItem('userSession');
         localStorage.removeItem('colorPreference');
       }
@@ -38,7 +41,7 @@ const Header = () => {
         ) : (
           <Box display="flex" alignItems="center">
             <Typography variant="body1" color="textPrimary">
-              Hello, {userSession}
+              Hello, {username ? username :userSession}
             </Typography>
             <Button color="inherit" onClick={logoutCurrentUser}>
               Logout
