@@ -5,25 +5,37 @@ import data from "../data.json";
 export const Test = () => {
   //state
   const [flattenData, setFlattenData] = useState({});
-  const [cartData, setCartData] = useState(false);
+  const [cartData, setCartData] = useState({});
 
   // function to update the count state
-  const incrementCartCout = (e,category, sub_category, itemId) => {
+  const incrementCartCout = (e, category, sub_category, itemId) => {
     e.stopPropagation();
-    const tempData=flattenData;
+    const cartSummary = cartData;
+    const tempData = flattenData;
     const categoryData = tempData[category];
     if (categoryData && categoryData[sub_category]) {
-      const item = categoryData[sub_category].find(item => item.id === itemId);
+      const item = categoryData[sub_category].find(
+        (item) => item.id === itemId
+      );
       if (item) {
         item.count += 1;
       }
     }
-    setFlattenData({...tempData})
+    const itemName = categoryData[sub_category].find(
+      (item) => item.id === itemId
+    ).type;
+    if (cartSummary.hasOwnProperty(itemName)) {
+      cartSummary[itemName]++;
+    } else {
+      cartSummary[itemName] = 0;
+    }
+    setFlattenData({ ...tempData });
+    setCartData({ ...cartSummary });
   };
+
   useEffect(() => {
     setFlattenData(objByCategory(data));
   }, []);
-  console.log(flattenData, "flattenData");
 
   return Object.entries(flattenData).map(([key, value]) => {
     return (
@@ -51,7 +63,7 @@ export const Test = () => {
                     <div>{sub_value_item.type}</div>
                     <button
                       onClick={(e) => {
-                        incrementCartCout(e,key, sub_key, sub_value_item.id);
+                        incrementCartCout(e, key, sub_key, sub_value_item.id);
                       }}
                     >
                       +
