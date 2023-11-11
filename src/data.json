@@ -1,0 +1,876 @@
+[
+    {
+      "id": 2,
+      "category": "Furniture",
+      "sub_category": "Sofa",
+      "type": "Single",
+      "build_type": null,
+      "cft": 15,
+      "priority": 0
+    },
+    {
+      "id": 104,
+      "category": "Others",
+      "sub_category": "Sample Sub Category",
+      "type": "Sample Type",
+      "build_type": "Sample Build",
+      "cft": 15,
+      "priority": 0
+    },
+    {
+      "id": 3,
+      "category": "Furniture",
+      "sub_category": "Sofa",
+      "type": "Double",
+      "build_type": null,
+      "cft": 30,
+      "priority": 1
+    },
+    {
+      "id": 4,
+      "category": "Furniture",
+      "sub_category": "Sofa",
+      "type": "3 Seater",
+      "build_type": null,
+      "cft": 45,
+      "priority": 1
+    },
+    {
+      "id": 5,
+      "category": "Others",
+      "sub_category": "Sofa",
+      "type": "4 Seater",
+      "build_type": null,
+      "cft": 60,
+      "priority": 1
+    },
+    {
+      "id": 6,
+      "category": "Furniture",
+      "sub_category": "Sofa",
+      "type": "5 Seater",
+      "build_type": null,
+      "cft": 75,
+      "priority": 1
+    },
+    {
+      "id": 7,
+      "category": "Furniture",
+      "sub_category": "Sofa",
+      "type": "6 Seater",
+      "build_type": null,
+      "cft": 90,
+      "priority": 1
+    },
+    {
+      "id": 8,
+      "category": "Furniture",
+      "sub_category": "Sofa",
+      "type": "Recliner",
+      "build_type": null,
+      "cft": 30,
+      "priority": 1
+    },
+    {
+      "id": 57,
+      "category": "Appliances",
+      "sub_category": "TV",
+      "type": "Upto 28\"",
+      "build_type": null,
+      "cft": 12,
+      "priority": 1
+    },
+    {
+      "id": 60,
+      "category": "Others",
+      "sub_category": "TV",
+      "type": "Above 55\"",
+      "build_type": null,
+      "cft": 36,
+      "priority": 1
+    },
+    {
+      "id": 58,
+      "category": "Appliances",
+      "sub_category": "TV",
+      "type": "29\" to 43\"",
+      "build_type": null,
+      "cft": 18,
+      "priority": 1
+    },
+    {
+      "id": 59,
+      "category": "Others",
+      "sub_category": "TV",
+      "type": "49\" to 55\"",
+      "build_type": null,
+      "cft": 30,
+      "priority": 1
+    },
+    {
+      "id": 96,
+      "category": "Cartons",
+      "sub_category": "Cartons",
+      "type": "Porter Carton Box",
+      "build_type": null,
+      "cft": 5,
+      "priority": 1
+    },
+    {
+      "id": 9,
+      "category": "Furniture",
+      "sub_category": "Bed",
+      "type": "Single",
+      "build_type": "Dismantallable",
+      "cft": 45,
+      "priority": 2
+    },
+    {
+      "id": 10,
+      "category": "Furniture",
+      "sub_category": "Bed",
+      "type": "Single",
+      "build_type": "Hydraulic",
+      "cft": 45,
+      "priority": 2
+    },
+    {
+      "id": 11,
+      "category": "Furniture",
+      "sub_category": "Bed",
+      "type": "Single",
+      "build_type": "Storage",
+      "cft": 45,
+      "priority": 2
+    },
+    {
+      "id": 12,
+      "category": "Others",
+      "sub_category": "Bed",
+      "type": "Queen",
+      "build_type": "Dismantallable",
+      "cft": 75,
+      "priority": 2
+    },
+    {
+      "id": 14,
+      "category": "Furniture",
+      "sub_category": "Bed",
+      "type": "Queen",
+      "build_type": "Storage",
+      "cft": 75,
+      "priority": 2
+    },
+    {
+      "id": 15,
+      "category": "Others",
+      "sub_category": "Bed",
+      "type": "King",
+      "build_type": "Dismantallable",
+      "cft": 90,
+      "priority": 2
+    },
+    {
+      "id": 16,
+      "category": "Furniture",
+      "sub_category": "Bed",
+      "type": "King",
+      "build_type": "Hydraulic",
+      "cft": 90,
+      "priority": 2
+    },
+    {
+      "id": 17,
+      "category": "Others",
+      "sub_category": "Bed",
+      "type": "King",
+      "build_type": "Storage",
+      "cft": 90,
+      "priority": 2
+    },
+    {
+      "id": 18,
+      "category": "Furniture",
+      "sub_category": "Bed",
+      "type": "Bunk",
+      "build_type": "Dismantallable",
+      "cft": 100,
+      "priority": 2
+    },
+    {
+      "id": 19,
+      "category": "Furniture",
+      "sub_category": "Bed",
+      "type": "Bunk",
+      "build_type": "Storage",
+      "cft": 100,
+      "priority": 2
+    },
+    {
+      "id": 20,
+      "category": "Furniture",
+      "sub_category": "Bed",
+      "type": "Folding Cot",
+      "build_type": "Dismantallable",
+      "cft": 24,
+      "priority": 2
+    },
+    {
+      "id": 21,
+      "category": "Others",
+      "sub_category": "Bed",
+      "type": "Folding Cot",
+      "build_type": "Hydraulic",
+      "cft": 24,
+      "priority": 2
+    },
+    {
+      "id": 22,
+      "category": "Furniture",
+      "sub_category": "Bed",
+      "type": "Folding Cot",
+      "build_type": "Storage",
+      "cft": 24,
+      "priority": 2
+    },
+    {
+      "id": 13,
+      "category": "Furniture",
+      "sub_category": "Bed",
+      "type": "Queen",
+      "build_type": "Hydraulic",
+      "cft": 75,
+      "priority": 2
+    },
+    {
+      "id": 61,
+      "category": "Others",
+      "sub_category": "AC/Cooler/Fan",
+      "type": "AC (Split)",
+      "build_type": null,
+      "cft": 40,
+      "priority": 2
+    },
+    {
+      "id": 62,
+      "category": "Appliances",
+      "sub_category": "AC/Cooler/Fan",
+      "type": "AC (WIndow)",
+      "build_type": null,
+      "cft": 30,
+      "priority": 2
+    },
+    {
+      "id": 63,
+      "category": "Appliances",
+      "sub_category": "AC/Cooler/Fan",
+      "type": "Cooler",
+      "build_type": null,
+      "cft": 16,
+      "priority": 2
+    },
+    {
+      "id": 64,
+      "category": "Others",
+      "sub_category": "AC/Cooler/Fan",
+      "type": "Ceiling Fan",
+      "build_type": null,
+      "cft": 3,
+      "priority": 2
+    },
+    {
+      "id": 65,
+      "category": "Appliances",
+      "sub_category": "AC/Cooler/Fan",
+      "type": "Table Fan",
+      "build_type": null,
+      "cft": 4,
+      "priority": 2
+    },
+    {
+      "id": 66,
+      "category": "Appliances",
+      "sub_category": "AC/Cooler/Fan",
+      "type": "Exhaust Fan",
+      "build_type": null,
+      "cft": 4,
+      "priority": 2
+    },
+    {
+      "id": 97,
+      "category": "Cartons",
+      "sub_category": "Gunny Bags",
+      "type": "Gunny Bags",
+      "build_type": null,
+      "cft": 9,
+      "priority": 2
+    },
+    {
+      "id": 23,
+      "category": "Furniture",
+      "sub_category": "Mattress",
+      "type": "Single Mattress",
+      "build_type": "Foldable",
+      "cft": 12,
+      "priority": 3
+    },
+    {
+      "id": 24,
+      "category": "Others",
+      "sub_category": "Mattress",
+      "type": "Single Mattress",
+      "build_type": "Non Foldable",
+      "cft": 12,
+      "priority": 3
+    },
+    {
+      "id": 25,
+      "category": "Furniture",
+      "sub_category": "Mattress",
+      "type": "Double Mattress",
+      "build_type": "Foldable",
+      "cft": 24,
+      "priority": 3
+    },
+    {
+      "id": 26,
+      "category": "Furniture",
+      "sub_category": "Mattress",
+      "type": "Double Mattress",
+      "build_type": "Non Foldable",
+      "cft": 24,
+      "priority": 3
+    },
+    {
+      "id": 67,
+      "category": "Appliances",
+      "sub_category": "Fridge",
+      "type": "Mini Fridge",
+      "build_type": null,
+      "cft": 15,
+      "priority": 3
+    },
+    {
+      "id": 68,
+      "category": "Appliances",
+      "sub_category": "Fridge",
+      "type": "Small - Upto 80 Ltrs",
+      "build_type": null,
+      "cft": 25,
+      "priority": 3
+    },
+    {
+      "id": 69,
+      "category": "Appliances",
+      "sub_category": "Fridge",
+      "type": "Medium - 80 to 300 Ltrs",
+      "build_type": null,
+      "cft": 30,
+      "priority": 3
+    },
+    {
+      "id": 70,
+      "category": "Appliances",
+      "sub_category": "Fridge",
+      "type": "Large 300-450 Ltrs",
+      "build_type": null,
+      "cft": 50,
+      "priority": 3
+    },
+    {
+      "id": 27,
+      "category": "Furniture",
+      "sub_category": "Almirah/Wardrobe",
+      "type": "Small (0-3 feet wide)",
+      "build_type": "Metal",
+      "cft": 42,
+      "priority": 4
+    },
+    {
+      "id": 28,
+      "category": "Furniture",
+      "sub_category": "Almirah/Wardrobe",
+      "type": "Small (0-3 feet wide)",
+      "build_type": "Wooden",
+      "cft": 42,
+      "priority": 4
+    },
+    {
+      "id": 29,
+      "category": "Furniture",
+      "sub_category": "Almirah/Wardrobe",
+      "type": "Small (0-3 feet wide)",
+      "build_type": "Dismantallable",
+      "cft": 42,
+      "priority": 4
+    },
+    {
+      "id": 30,
+      "category": "Furniture",
+      "sub_category": "Almirah/Wardrobe",
+      "type": "Medium (3-6 feet wide)",
+      "build_type": "Metal",
+      "cft": 84,
+      "priority": 4
+    },
+    {
+      "id": 31,
+      "category": "Furniture",
+      "sub_category": "Almirah/Wardrobe",
+      "type": "Medium (3-6 feet wide)",
+      "build_type": "Wooden",
+      "cft": 84,
+      "priority": 4
+    },
+    {
+      "id": 32,
+      "category": "Furniture",
+      "sub_category": "Almirah/Wardrobe",
+      "type": "Medium (3-6 feet wide)",
+      "build_type": "Dismantallable",
+      "cft": 84,
+      "priority": 4
+    },
+    {
+      "id": 33,
+      "category": "Furniture",
+      "sub_category": "Almirah/Wardrobe",
+      "type": "Big (6-9 feet wide)",
+      "build_type": "Metal",
+      "cft": 126,
+      "priority": 4
+    },
+    {
+      "id": 34,
+      "category": "Furniture",
+      "sub_category": "Almirah/Wardrobe",
+      "type": "Big (6-9 feet wide)",
+      "build_type": "Wooden",
+      "cft": 126,
+      "priority": 4
+    },
+    {
+      "id": 35,
+      "category": "Furniture",
+      "sub_category": "Almirah/Wardrobe",
+      "type": "Big (6-9 feet wide)",
+      "build_type": "Dismantallable",
+      "cft": 126,
+      "priority": 4
+    },
+    {
+      "id": 36,
+      "category": "Furniture",
+      "sub_category": "Almirah/Wardrobe",
+      "type": "Chest of 3 Drawers",
+      "build_type": null,
+      "cft": 12,
+      "priority": 4
+    },
+    {
+      "id": 71,
+      "category": "Appliances",
+      "sub_category": "Bathroom Utility",
+      "type": "Washing Machine",
+      "build_type": null,
+      "cft": 18,
+      "priority": 4
+    },
+    {
+      "id": 72,
+      "category": "Appliances",
+      "sub_category": "Bathroom Utility",
+      "type": "Geyser",
+      "build_type": null,
+      "cft": 6,
+      "priority": 4
+    },
+    {
+      "id": 73,
+      "category": "Appliances",
+      "sub_category": "Bathroom Utility",
+      "type": "Bath Tub",
+      "build_type": null,
+      "cft": 24,
+      "priority": 4
+    },
+    {
+      "id": 37,
+      "category": "Furniture",
+      "sub_category": "Chairs",
+      "type": "Dining Table Chairs",
+      "build_type": null,
+      "cft": 14,
+      "priority": 5
+    },
+    {
+      "id": 38,
+      "category": "Furniture",
+      "sub_category": "Chairs",
+      "type": "Bean bag / Baby Chair",
+      "build_type": null,
+      "cft": 8,
+      "priority": 5
+    },
+    {
+      "id": 39,
+      "category": "Furniture",
+      "sub_category": "Chairs",
+      "type": "Rocking Chair",
+      "build_type": null,
+      "cft": 20,
+      "priority": 5
+    },
+    {
+      "id": 40,
+      "category": "Furniture",
+      "sub_category": "Chairs",
+      "type": "Plastic/Folding Chair",
+      "build_type": null,
+      "cft": 8,
+      "priority": 5
+    },
+    {
+      "id": 41,
+      "category": "Furniture",
+      "sub_category": "Chairs",
+      "type": "Office Chair",
+      "build_type": null,
+      "cft": 14,
+      "priority": 5
+    },
+    {
+      "id": 74,
+      "category": "Appliances",
+      "sub_category": "Kitchen Utility",
+      "type": "Gas Stove",
+      "build_type": null,
+      "cft": 6,
+      "priority": 5
+    },
+    {
+      "id": 75,
+      "category": "Appliances",
+      "sub_category": "Kitchen Utility",
+      "type": "Water purifier",
+      "build_type": null,
+      "cft": 3,
+      "priority": 5
+    },
+    {
+      "id": 76,
+      "category": "Appliances",
+      "sub_category": "Kitchen Utility",
+      "type": "Microwave / OTG",
+      "build_type": null,
+      "cft": 4,
+      "priority": 5
+    },
+    {
+      "id": 77,
+      "category": "Appliances",
+      "sub_category": "Kitchen Utility",
+      "type": "Chimney",
+      "build_type": null,
+      "cft": 15,
+      "priority": 5
+    },
+    {
+      "id": 78,
+      "category": "Appliances",
+      "sub_category": "Kitchen Utility",
+      "type": "Dish Washer",
+      "build_type": null,
+      "cft": 18,
+      "priority": 5
+    },
+    {
+      "id": 79,
+      "category": "Appliances",
+      "sub_category": "Kitchen Utility",
+      "type": "Gas Cylinder",
+      "build_type": null,
+      "cft": 8,
+      "priority": 5
+    },
+    {
+      "id": 80,
+      "category": "Appliances",
+      "sub_category": "Kitchen Utility",
+      "type": "Utnesil Rack",
+      "build_type": null,
+      "cft": 12,
+      "priority": 5
+    },
+    {
+      "id": 42,
+      "category": "Furniture",
+      "sub_category": "Tables",
+      "type": "Bed Side Table",
+      "build_type": null,
+      "cft": 6,
+      "priority": 6
+    },
+    {
+      "id": 43,
+      "category": "Furniture",
+      "sub_category": "Tables",
+      "type": "Dressing Table",
+      "build_type": null,
+      "cft": 18,
+      "priority": 6
+    },
+    {
+      "id": 44,
+      "category": "Furniture",
+      "sub_category": "Tables",
+      "type": "Study/Computer Table",
+      "build_type": null,
+      "cft": 15,
+      "priority": 6
+    },
+    {
+      "id": 45,
+      "category": "Furniture",
+      "sub_category": "Tables",
+      "type": "Center Table",
+      "build_type": null,
+      "cft": 12,
+      "priority": 6
+    },
+    {
+      "id": 46,
+      "category": "Furniture",
+      "sub_category": "Tables",
+      "type": "Dining Table",
+      "build_type": null,
+      "cft": 32,
+      "priority": 6
+    },
+    {
+      "id": 47,
+      "category": "Furniture",
+      "sub_category": "Tables",
+      "type": "Teapoy",
+      "build_type": null,
+      "cft": 5,
+      "priority": 6
+    },
+    {
+      "id": 48,
+      "category": "Furniture",
+      "sub_category": "Tables",
+      "type": "Foosball",
+      "build_type": null,
+      "cft": 24,
+      "priority": 6
+    },
+    {
+      "id": 49,
+      "category": "Furniture",
+      "sub_category": "Tables",
+      "type": "Pool/Snooker",
+      "build_type": null,
+      "cft": 72,
+      "priority": 6
+    },
+    {
+      "id": 81,
+      "category": "Appliances",
+      "sub_category": "Vehicle",
+      "type": "Bike",
+      "build_type": null,
+      "cft": 110,
+      "priority": 6
+    },
+    {
+      "id": 82,
+      "category": "Appliances",
+      "sub_category": "Vehicle",
+      "type": "Scooter",
+      "build_type": null,
+      "cft": 90,
+      "priority": 6
+    },
+    {
+      "id": 83,
+      "category": "Appliances",
+      "sub_category": "Vehicle",
+      "type": "Bicycle",
+      "build_type": null,
+      "cft": 16,
+      "priority": 6
+    },
+    {
+      "id": 50,
+      "category": "Furniture",
+      "sub_category": "Accessories",
+      "type": "TV Stand/Trolley",
+      "build_type": null,
+      "cft": 12,
+      "priority": 7
+    },
+    {
+      "id": 51,
+      "category": "Furniture",
+      "sub_category": "Accessories",
+      "type": "Book Shelf",
+      "build_type": null,
+      "cft": 12,
+      "priority": 7
+    },
+    {
+      "id": 52,
+      "category": "Furniture",
+      "sub_category": "Accessories",
+      "type": "Mirror (Large)",
+      "build_type": null,
+      "cft": 16,
+      "priority": 7
+    },
+    {
+      "id": 53,
+      "category": "Others",
+      "sub_category": "Accessories",
+      "type": "Shoe Rack",
+      "build_type": null,
+      "cft": 9,
+      "priority": 7
+    },
+    {
+      "id": 54,
+      "category": "Others",
+      "sub_category": "Accessories",
+      "type": "Mandir (Big)",
+      "build_type": null,
+      "cft": 32,
+      "priority": 7
+    },
+    {
+      "id": 55,
+      "category": "Furniture",
+      "sub_category": "Accessories",
+      "type": "Iron Trunk/Chest",
+      "build_type": null,
+      "cft": 24,
+      "priority": 7
+    },
+    {
+      "id": 56,
+      "category": "Furniture",
+      "sub_category": "Accessories",
+      "type": "Bar Unit",
+      "build_type": null,
+      "cft": 18,
+      "priority": 7
+    },
+    {
+      "id": 84,
+      "category": "Appliances",
+      "sub_category": "Home Utility",
+      "type": "Sewing Machine",
+      "build_type": null,
+      "cft": 6,
+      "priority": 7
+    },
+    {
+      "id": 85,
+      "category": "Others",
+      "sub_category": "Home Utility",
+      "type": "Vacuum Cleaner",
+      "build_type": null,
+      "cft": 16,
+      "priority": 7
+    },
+    {
+      "id": 86,
+      "category": "Appliances",
+      "sub_category": "Home Utility",
+      "type": "Lamp",
+      "build_type": null,
+      "cft": 4,
+      "priority": 7
+    },
+    {
+      "id": 87,
+      "category": "Appliances",
+      "sub_category": "Home Utility",
+      "type": "Plants",
+      "build_type": null,
+      "cft": 6,
+      "priority": 7
+    },
+    {
+      "id": 88,
+      "category": "Others",
+      "sub_category": "Home Utility",
+      "type": "Iron Board",
+      "build_type": null,
+      "cft": 16,
+      "priority": 7
+    },
+    {
+      "id": 89,
+      "category": "Appliances",
+      "sub_category": "Home Utility",
+      "type": "Dish Antenna",
+      "build_type": null,
+      "cft": 8,
+      "priority": 7
+    },
+    {
+      "id": 90,
+      "category": "Appliances",
+      "sub_category": "Home Utility",
+      "type": "Buckets and Tubs",
+      "build_type": null,
+      "cft": 3,
+      "priority": 7
+    },
+    {
+      "id": 91,
+      "category": "Others",
+      "sub_category": "Home Utility",
+      "type": "Decorative Item",
+      "build_type": null,
+      "cft": 2,
+      "priority": 7
+    },
+    {
+      "id": 92,
+      "category": "Appliances",
+      "sub_category": "Home Utility",
+      "type": "Ladder",
+      "build_type": null,
+      "cft": 10,
+      "priority": 7
+    },
+    {
+      "id": 93,
+      "category": "Appliances",
+      "sub_category": "Home Utility",
+      "type": "Water Drum",
+      "build_type": null,
+      "cft": 12,
+      "priority": 7
+    },
+    {
+      "id": 94,
+      "category": "Others",
+      "sub_category": "Others",
+      "type": "Inverter/UPS",
+      "build_type": null,
+      "cft": 8,
+      "priority": 8
+    },
+    {
+      "id": 95,
+      "category": "Others",
+      "sub_category": "Others",
+      "type": "Treadmill/Exercise Cycle",
+      "build_type": null,
+      "cft": 48,
+      "priority": 8
+    }
+  ]
+  
