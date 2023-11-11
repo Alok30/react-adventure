@@ -9,13 +9,11 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Router>
-    <Routes>
-      <Route path="/signup" element={<SignUp/>} exact />
-      <Route path="/login" element={<SignInPage/>} exact/>
-      <Route path="/" element={<Home/>}  exact/>
-    </Routes>
-  </Router>
+      <Routes>
+        <Route path="/signup" element={<SignUp />} exact />
+        <Route path="/login" element={<SignInPage />} exact />
+        <Route path="/" element={<Home />} exact />
+      </Routes>
+    </Router>
   </React.StrictMode>
 );
-
-
